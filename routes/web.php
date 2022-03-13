@@ -17,7 +17,7 @@ Route::get('/', function () {
   return view('welcome');
 });
 
-Route::get('hello/{id?}', 'App\Http\Controllers\HelloController@index');
+Route::get('hello', 'App\Http\Controllers\HelloController@index');
 // Route::get('hello', function () {
 //   return view('hello.index');
 // });
