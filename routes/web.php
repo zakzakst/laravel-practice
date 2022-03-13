@@ -18,3 +18,6 @@ Route::get('/', function () {
 });
 
 Route::get('hello', 'App\Http\Controllers\HelloController@index');
+// Route::get('hello', function () {
+//   return view('hello.index');
+// });
