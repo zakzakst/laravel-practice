@@ -16,7 +16,11 @@
 </head>
 <body>
   <h1>Blade/Index</h1>
+  @if ($msg != '')
   <p>{{ $msg }}</p>
+  @else
+  <p>何か書いてください。</p>
+  @endif
   <form method="POST" action="/hello">
     @csrf
     <input type="text" name="msg">
