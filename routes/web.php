@@ -17,7 +17,8 @@ Route::get('/', function () {
   return view('welcome');
 });
 
-Route::get('hello', 'App\Http\Controllers\HelloController@index');
+Route::get('hello', 'App\Http\Controllers\HelloController@index')
+  ->middleware('auth');
 Route::post('hello', 'App\Http\Controllers\HelloController@post');
 // Route::get('hello', function () {
 //   return view('hello.index');
@@ -59,6 +60,10 @@ Route::get('hello/rest', 'RestappController@rest');
 
 Route::get('hello/session', 'App\Http\Controllers\HelloController@ses_get');
 Route::post('hello/session', 'App\Http\Controllers\HelloController@ses_put');
+
+Route::get('hello/auth', 'App\Http\Controllers\HelloController@gatAuth');
+Route::post('hello/auth', 'App\Http\Controllers\HelloController@postAuth');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
