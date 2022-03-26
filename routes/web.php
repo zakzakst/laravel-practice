@@ -59,3 +59,6 @@ Route::get('hello/rest', 'RestappController@rest');
 
 Route::get('hello/session', 'App\Http\Controllers\HelloController@ses_get');
 Route::post('hello/session', 'App\Http\Controllers\HelloController@ses_put');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
