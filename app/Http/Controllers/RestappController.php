@@ -13,7 +13,8 @@ class RestappController extends Controller
      */
     public function index()
     {
-        //
+        $items = Restdata::all();
+        return $items->toArray();
     }
 
     /**
@@ -23,7 +24,7 @@ class RestappController extends Controller
      */
     public function create()
     {
-        //
+        return view('rest.create');
     }
 
     /**
@@ -34,7 +35,11 @@ class RestappController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $restdata = new Restdata;
+        $form = $request->all();
+        unset($form['_token']);
+        $restdata->fill($form)->save();
+        return redirect('/rest');
     }
 
     /**
@@ -45,7 +50,8 @@ class RestappController extends Controller
      */
     public function show($id)
     {
-        //
+        $item = Restdata::find($id);
+        return $item->toArray();
     }
 
     /**
