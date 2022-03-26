@@ -4,8 +4,7 @@
 
 @section('menubar')
   @parent
-  インデックスページ</li>
-  <li>テスト
+  インデックスページ
 @endsection
 
 @section('content')
@@ -23,6 +22,7 @@
       </tr>
     @endforeach
   </table>
+  {{$items->links()}}
 @endsection
 
 @section('footer')
